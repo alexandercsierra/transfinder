@@ -3,6 +3,7 @@ import {
   Card, CardImg, CardText, CardBody, CardLink,
   CardTitle, CardSubtitle
 } from 'reactstrap';
+import Rating from './Rating'
 import styled from 'styled-components'
 
 const StyledCard = styled(Card)`
@@ -23,6 +24,7 @@ const TheCard = (props) => {
           <CardText>Here's a description of what this business is and the sorts of services that it may offer.</CardText>
           <CardLink href="#">Card Link</CardLink>
           <CardLink href="#">Another Link</CardLink>
+          <Rating/>
         </CardBody>
       </StyledCard>
     </div>
