@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <Search/>
-            <Card/>
+            {/* <Card/> */}
         </div>
     )
 }

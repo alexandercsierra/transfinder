@@ -18,7 +18,7 @@ export default function SimpleRating() {
           }}
         />
       </Box>
-      <Box component="fieldset" mb={3} borderColor="transparent">
+      {/* <Box component="fieldset" mb={3} borderColor="transparent">
         <Typography component="legend">Read only</Typography>
         <Rating name="read-only" value={value} readOnly />
       </Box>
@@ -29,7 +29,7 @@ export default function SimpleRating() {
       <Box component="fieldset" mb={3} borderColor="transparent">
         <Typography component="legend">Pristine</Typography>
         <Rating name="pristine" value={null} />
-      </Box>
+      </Box> */}
     </div>
   );
 }
