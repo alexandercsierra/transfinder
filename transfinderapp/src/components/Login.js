@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import styled from 'styled-components'
 import {axiosWithAuth} from '../axiosWithAuth'
+import axios from 'axios';
+import {useHistory} from 'react-router-dom'
 
 const LoginContainer = styled.div`
     // border: 1px solid red;
@@ -23,15 +25,20 @@ const Login = (props) => {
       [e.target.name]: e.target.value
     })
   }
+  const history = useHistory();
 
   const onSubmit = e => {
     e.preventDefault();
     console.log("submitted", user);
-    axiosWithAuth().post('https://auth-friends-backend.herokuapp.com/api/login', user)
-      .then(res=>localStorage.setItem('token', res.data.payload))
+    axios.post('http://localhost:5000/auth/login', user)
+      .then(res=>{
+        localStorage.setItem('token', res.data.token);
+        history.push('/dashboard')
+      })
       .catch(err=>console.log(err))
   }
 
+  
 
   return (
     <LoginContainer>

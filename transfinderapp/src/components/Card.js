@@ -5,6 +5,7 @@ import {
 } from 'reactstrap';
 import Rating from './Rating'
 import styled from 'styled-components'
+import {useHistory} from 'react-router-dom'
 
 const StyledCard = styled(Card)`
     margin-top: 4%;
@@ -12,7 +13,16 @@ const StyledCard = styled(Card)`
     box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);
 `;
 
+
+
+
+
 const TheCard = (props) => {
+  const history = useHistory();
+
+const rating = ()=>{
+  history.push('/review')
+}
   const {type, imgUrl, name, formattedAddress} = props;
   return (
     <div>
@@ -26,7 +36,8 @@ const TheCard = (props) => {
           <CardText>{type}</CardText>
           {/* <CardLink href="#">Card Link</CardLink>
           <CardLink href="#">Another Link</CardLink> */}
-          <Rating/>
+          {/* <Rating/> */}
+          <button onClick={rating}>Submit a rating</button>
         </CardBody>
       </StyledCard>
     </div>

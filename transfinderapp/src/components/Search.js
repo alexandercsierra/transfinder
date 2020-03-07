@@ -1,32 +1,12 @@
-// import React from 'react';
-// import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
-
-// const Example = (props) => {
-//   return (
-//     <Form style={{width: "50%", margin: "4% auto"}}>
-//       <FormGroup>
-//         {/* <Label for="exampleSearch">Search</Label> */}
-//         <Input
-//           type="search"
-//           name="search"
-//           id="exampleSearch"
-//           placeholder="search for an establishment"
-//         />
-//       </FormGroup>
-//     </Form>
-//   );
-// }
-
-// export default Example;
-
 import React, {useState, useEffect} from 'react';
 import PlacesAutocomplete, {geocodeByAddress, getLatLng} from 'react-places-autocomplete'
 import Card from './Card'
 import axios from 'axios'
+import dotenv from 'dotenv'
+import {axiosWithAuth} from '../axiosWithAuth'
 
 const Search = () => {
-  const [key] = useState("AIzaSyBz1ODS7WviKKDVRh31afZ-AEfUhHKf5j4");
+  const [key] = useState("");
   const [address, setAddress] = useState("");
   // const [coordinates, setCoordinates] = useState({lat: null, lng: null});
   const [type, setType] = useState("");
@@ -35,7 +15,7 @@ const Search = () => {
   const [imgUrl, setImgUrl] = useState("");
   const [name, setName] = useState("");
   const [formattedAddress, setFormattedAddress] = useState("");
-  
+
 
   const convertString = (str) => {
     let address = str.split(",");
@@ -105,7 +85,7 @@ const Search = () => {
             })}
           </div>
           <div>
-            {placeID && <Card type={type} imgUrl={imgUrl} name={name} formattedAddress={formattedAddress}/>}
+            {placeID && <Card placeID={placeID} type={type} imgUrl={imgUrl} name={name} formattedAddress={formattedAddress}/>}
           </div>
         </div>}
       </PlacesAutocomplete>

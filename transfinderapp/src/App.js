@@ -10,6 +10,7 @@ import styled from 'styled-components'
 import PrivateRoute from './components/PrivateRoute'
 import Dashboard from './components/Dashboard'
 import Signup from './components/Signup'
+import Review from './components/Review'
 
 const Container = styled.div`
   width: 80%;
@@ -26,6 +27,7 @@ function App() {
         <Route path="/login"><Login/></Route>
         <Route path="/signup"><Signup/></Route>
         <PrivateRoute path="/dashboard" component={Dashboard} />
+        <PrivateRoute path="/review" component={Review} />
       </Container>
       
     </div>

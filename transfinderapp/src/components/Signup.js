@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import styled from 'styled-components'
 import {axiosWithAuth} from '../axiosWithAuth'
+import axios from 'axios'
 
 export default function Signup() {
 
@@ -20,8 +21,11 @@ export default function Signup() {
       const onSubmit = e => {
         e.preventDefault();
         console.log("submitted", user);
-        axiosWithAuth().post('https://auth-friends-backend.herokuapp.com/api/login', user)
-          .then(res=>localStorage.setItem('token', res.data.payload))
+        axios.post('http://localhost:5000/auth/register', user)
+          .then(res=>{
+              console.log(res);
+            //   localStorage.setItem('token', res.data.payload)
+          })
           .catch(err=>console.log(err))
       }
 
