@@ -7,6 +7,9 @@ import Login from './components/Login'
 import Nav from './components/Nav'
 import Home from './components/Home'
 import styled from 'styled-components'
+import PrivateRoute from './components/PrivateRoute'
+import Dashboard from './components/Dashboard'
+import Signup from './components/Signup'
 
 const Container = styled.div`
   width: 80%;
@@ -21,6 +24,8 @@ function App() {
         <h1>Trans Finder</h1>
         <Route exact path="/"><Home /></Route>
         <Route path="/login"><Login/></Route>
+        <Route path="/signup"><Signup/></Route>
+        <PrivateRoute path="/dashboard" component={Dashboard} />
       </Container>
       
     </div>

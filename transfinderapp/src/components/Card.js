@@ -21,7 +21,7 @@ const TheCard = (props) => {
           <CardTitle>{name}</CardTitle>
           <CardSubtitle>{formattedAddress}</CardSubtitle>
         </CardBody>
-        <img width="100%" src={imgUrl} alt="Card image cap" />
+        <img width="50%" src={imgUrl} alt="Card image cap" />
         <CardBody>
           <CardText>{type}</CardText>
           {/* <CardLink href="#">Card Link</CardLink>
