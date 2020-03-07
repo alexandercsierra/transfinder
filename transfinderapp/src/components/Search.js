@@ -26,7 +26,7 @@ import Card from './Card'
 import axios from 'axios'
 
 const Search = () => {
-  const [key] = useState("");
+  const [key] = useState("AIzaSyBz1ODS7WviKKDVRh31afZ-AEfUhHKf5j4");
   const [address, setAddress] = useState("");
   // const [coordinates, setCoordinates] = useState({lat: null, lng: null});
   const [type, setType] = useState("");
